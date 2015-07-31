@@ -29,17 +29,17 @@ class DNA():
 		else:
 			print(self.sequence)
 
-Dna1 = DNA(10)
-Dna1.DnaGen()
-Dna1.PrintDna()
+#Dna1 = DNA(10)
+#Dna1.DnaGen()
+#Dna1.PrintDna()
 
-Dna2 = DNA(0)
-Dna2.DnaGen()
-Dna2.PrintDna()
+#Dna2 = DNA(0)
+#Dna2.DnaGen()
+#Dna2.PrintDna()
 
-Dna3 = DNA(20)
-Dna3.DnaGen()
-Dna3.PrintDna()
+#Dna3 = DNA(20)
+#Dna3.DnaGen()
+#Dna3.PrintDna()
 
 
 
