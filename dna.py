@@ -12,8 +12,6 @@ class DNA():
 
 	def DnaGen(self):
 		""" This function creates a sequence of Dna based on a given length"""
-
-		#string_length = input("Define the lenght of your sample DNA")
 		for i in range(self.DNA_length):
 			num = random.randrange(0,3)
 			if(num%4==1):
@@ -32,18 +30,3 @@ class DNA():
 			print("Error : DNA length = 0 ==>  You must generate a DNA sequence first !!!")
 		else:
 			print(self.sequence)
-
-#Dna1 = DNA(10)
-#Dna1.DnaGen()
-#Dna1.PrintDna()
-
-#Dna2 = DNA(0)
-#Dna2.DnaGen()
-#Dna2.PrintDna()
-
-#Dna3 = DNA(20)
-#Dna3.DnaGen()
-#Dna3.PrintDna()
-
-
-

@@ -1,17 +1,16 @@
 import dna
 import random
 
+### DNA Sequene Dictionary ###
 seq_dict = {}
 
-#class Dna_Sequence_Detector():
-#"""This class detect the longest sequence and return the position of that longest one detected."""
 
-#	def __init__(self):
-
-dna1 = dna.DNA(20)
+### Test DNA ###
+dna_length = int(input("Define the length of DNA"))
+dna1 = dna.DNA(dna_length)
 dna1.DnaGen()
 dna1.PrintDna()
-counter = 0
+
 
 def sequence_detect(dna_seq):
 
@@ -51,7 +50,7 @@ def sequence_detect(dna_seq):
 	print(seq_dict)
 
 def longest_sequence():
-	print ("Longest_sequence called")
+	print ("Function longest_sequence() called")
 	longest_pos = 0
 	longest_seq = ''
 
