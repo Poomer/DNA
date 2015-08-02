@@ -1,9 +1,6 @@
 import dna
 import random
 
-
-
-seq_l = []
 seq_dict = {}
 
 #class Dna_Sequence_Detector():
@@ -16,37 +13,31 @@ dna1.DnaGen()
 dna1.PrintDna()
 counter = 0
 
+def sequence_detect(dna_seq):
 
-#for acid in dna1.sequence:
-#print("ENTERING FOR LOOP ")
-start_acid = dna1.sequence
-#start_acid = 'AAGCCCCCCGCACAATTTTTT'
-print("start_acid : " + start_acid)
+	seq = ''
+	first_pos = 0
+	
+	for pos in range(0,len(dna_seq)-1):
 
-seq = ''
-first_pos = 0
-
-
-for pos in range(0,len(start_acid)-1):
-
-		if (start_acid[pos+1] == start_acid[pos]) and (len(seq)==0):    ### Plausible first sequence detected
-			seq = start_acid[pos]
+		if (dna_seq[pos+1] == dna_seq[pos]) and (len(seq)==0):    ### Plausible first sequence detected
+			seq = dna_seq[pos]
 			print("at position %d : first seq work" % pos)
 			first_pos = pos
 			print(first_pos)
-			if(pos==len(start_acid)-2):                                 ### If it is the penultimate one, always add another acid.
+			if(pos==len(dna_seq)-2):                                 ### If it is the penultimate one, always add another acid.
 				seq +=seq
 			seq_dict[first_pos] = seq
 
 
 			## In case this is the last sequence
 
-		elif(start_acid[pos+1] == start_acid[pos]):						### if continues, just add it
-			seq += start_acid[pos+1]
+		elif(dna_seq[pos+1] == dna_seq[pos]):						### if continues, just add it
+			seq += dna_seq[pos+1]
 			print("at position %d : continue seq"% pos)
 			print(seq)
-			if(pos==len(start_acid)-2):                                 ### If it is the penultimate one, always add another acid.
-				seq +=start_acid[pos]
+			if(pos==len(dna_seq)-2):                                 ### If it is the penultimate one, always add another acid.
+				seq +=dna_seq[pos]
 			seq_dict[first_pos] = seq
 
 		
@@ -57,28 +48,23 @@ for pos in range(0,len(start_acid)-1):
 			print("at position %d : seq end"%pos)
 			seq = ''
 
-print(seq_dict)
+	print(seq_dict)
+
+def longest_sequence():
+	print ("Longest_sequence called")
+	longest_pos = 0
+	longest_seq = ''
+
+	for key,value in seq_dict.items():
+		print (key, value)
+		if len(value)>len(longest_seq):     ## update the longest sequence found, along with its position
+	 		longest_pos = key
+	 		longest_seq = value
+	print ("The longest sequence found at position %d with a sequence of %s" %(longest_pos,longest_seq))
 
 
-
-
-
-
-"""
-for acid in range(0,len(start_acid.sequence))
-	if(counter != len(dna1.sequence)):
-		if(dna1.sequence[counter+1] == dna1.sequence[counter]):
-			start_acid += dna1.sequence[counter+1]
-			print(start_acid)
-		else:
-			start_acid = dna1.sequence[counter]
-			print(start_acid)
-		counter += 1
-		print(counter)
-	else:
-		break
-"""	
-	
+sequence_detect(dna1.sequence)
+longest_sequence()
 
 	
 
