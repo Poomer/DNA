@@ -1,7 +1,7 @@
 import random
 
 class DNA():
-	"""This module creates a dna sequence """
+	"""This module generates a dna sequence """
 
 	acid = ['A','C','G','T']
 	sequence = ''
@@ -13,12 +13,12 @@ class DNA():
 	def DnaGen(self):
 		""" This function creates a sequence of Dna based on a given length"""
 		for i in range(self.DNA_length):
-			num = random.randrange(0,3)
-			if(num%4==1):
+			num = random.randrange(0,4)
+			if(num%4==0):
 				self.sequence += self.acid[0]
-			elif(num%4==2):
+			elif(num%4==1):
 				self.sequence += self.acid[1]
-			elif(num%4==3):
+			elif(num%4==2):
 				self.sequence += self.acid[2]
 			else:
 				self.sequence += self.acid[3]

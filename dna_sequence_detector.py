@@ -1,4 +1,5 @@
 import dna
+
 import random
 
 ### DNA Sequene Dictionary ###
